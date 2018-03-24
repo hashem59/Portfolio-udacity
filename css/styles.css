@@ -1,0 +1,236 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+}
+
+body {
+    height: 1000px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/* Head */
+.header {
+    width: 100%;
+    border-bottom: 4px solid #2E3C49;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.header .logo {
+    width: 30%;
+    padding: 25px 0;
+}
+
+.header .logo .logo-text {
+    width: 95px;
+    background: #e1e3e3;
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 75px;
+    color: #03B3E4;
+}
+
+ .header .logo .logo-text .pig-ltr {
+    font-size: 28px  
+}
+
+.header .name-title {
+    width: 70%;
+    text-align: right;
+    padding: 40px 0 40px 0;
+    text-transform: uppercase;
+}
+
+.header .name-title .name {
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.header .name-title .title {
+    font-weight: 600;
+    font-size: 20px; 
+}
+
+/* HERO */
+.hero {
+    padding-top: 30px;
+    margin-bottom: 40px;   
+}
+
+.hero .hero-img {
+    max-width: 100%;
+}
+
+/* PORTFOLIOI */
+.portfolio {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.portfolio .portfolio-head {
+    margin-bottom: 20px;
+    width: 100%;
+    color: #7D97AE;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.portfolio .portfolio-item {
+    height: 335px;
+    width: calc(33.3333% - 12px);
+    margin: 12px 0;
+    color: #2E3C49;
+}
+
+.portfolio .portfolio-item .portfolio-img {
+    width: 100%;
+    min-height: 205px;
+}
+
+.portfolio .portfolio-item .port-item-head {
+    margin: 10px 0;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.portfolio .portfolio-item .project-info {
+    text-align: center;
+    line-height: 24px;
+}
+
+.portfolio .portfolio-item .project-info .project-link {
+    text-decoration: none;
+    color: #7D97AE;
+}
+
+/* setting container size */
+@media screen and (min-width: 1100px) {
+    
+    .container {
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+/*quiris padding-- responsiveness--responsive fonts */
+/*Setting padding */
+@media screen and (max-width: 1120px) {
+    
+    .portfolio {
+        padding: 0 10px;
+    }
+    
+    .header {
+        padding: 0 10px;
+    }
+}
+
+/* Responsiveness settings */
+@media screen and (max-width: 770px) {
+    
+    .header .logo, .header .name-title {
+        width: 100%;
+        text-align: center;
+    }
+    .header .logo {
+    }
+    
+    .header .name-title {
+        padding: 0px 0 20px 0;
+    }
+
+    
+    .portfolio .portfolio-item {
+    width: calc(50% - 16px);
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    
+    .portfolio .portfolio-item {
+        width: calc(90% - 16px);
+        margin: 0 auto;
+    }
+    
+}
+
+/* Makes Font responsve*/
+@media screen and (min-width:450px) and (max-width: 600px)  {
+    
+    .header .name-title .name {
+        font-size: 40px;
+    }
+
+    .header .name-title .title {
+        font-size: 17px
+    }
+    
+    .portfolio .portfolio-head {
+    font-size: 30px;
+    }
+    
+    .portfolio .portfolio-item .port-item-head {
+        font-size: 30px;
+    }
+    
+}
+
+@media screen and (max-width:449px) {
+    
+    .header .name-title .name {
+        font-size: 30px;
+    }
+
+    .header .name-title .title {
+        font-size: 15px
+    }
+    
+    .portfolio .portfolio-head {
+    font-size: 25px;
+    }
+    
+    .portfolio .portfolio-item .port-item-head {
+        font-size: 30px;
+    }
+
+}
