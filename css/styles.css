@@ -1,377 +1,237 @@
-html {
-  box-sizing: border-box;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+}
+
+body {
+    height: 1000px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 *,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #ffffff url('../img/geometry1.jpg');
- /* Background pattern from Subtle Patterns */
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Coda', cursive;
-}
-
-li {
-  list-style: none;
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-header h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  background: #b4f5ef;
-  border-radius: 14px;
-  width: 110%;
-  text-align: center;
+/* Head */
+.header {
+    width: 100%;
+    border-bottom: 4px solid #2E3C49;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-
-
-/*
- * Styles for the deck of cards
- */
-
-.deck {
-  width: 660px;
-  min-height: 680px;
-  background: linear-gradient(160deg, #B4F5EF 0%, #DFC9F0 100%);
-  padding: 32px;
-  border-radius: 10px;
-  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 0 3em;
+.header .logo {
+    width: 30%;
+    padding: 25px 0;
 }
 
-.deck .card {
-  height: 125px;
-  width: 125px;
-  background: #2e3d49;
-  font-size: 0;
-  color: #ffffff;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-}
-
-.deck .card.open {
-  transform: rotateY(0);
-  background: #02b3e4;
-  cursor: default;
-}
-
-.deck .card.show {
-  font-size: 33px;
-}
-
-.deck .card.match {
-  cursor: default;
-  background: #02ccba;
-  font-size: 33px;
-}
-
-.deck .card.wrong {
-  background-color: #d9534f;
-}
-
-
-
-/*
- * Styles for the Score Panel
- */
-
-.score-panel {
-  text-align: left;
-  width: 345px;
-  margin-bottom: 10px;
-  background: #b4f5ef;
-  border-radius: 8px;
-  padding: 3px 10px;
-}
-
-.score-panel .stars {
-  padding: 0;
-  display: inline-block;
-  margin: 0 5px 0 0;
-  color: gold;
-}
-
-.score-panel .stars li {
-  list-style: none;
-  display: inline-block;
-}
-
-.score-panel .restart {
-  float: right;
-  cursor: pointer;
-}
-
-.score-panel #timer-min {
-  margin-left: 25px;
-}
-
-
-/* 
-PopUp styles 
-*/
-
-.cong-popup {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  background: #fff;
-  text-align: center;
-  visibility: hidden;
-}
-
-.cong-popup i {
-  font-size: 60px;
-  margin-top: 15%;
-  border: 3px solid #eee;
-  border-radius: 50%;
-  padding: 6px;
-  color: #02ccbaf0;
-}
-
-.cong-popup h1 {
-  color: #000;
-  margin-top: 20px;
-  font-family: arial, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-}
-
-.cong-popup p {
-  color: #666;
-  font-weight: 700;
-  font-family: arial, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-}
-
-.cong-popup button {
-  padding: 5px 20px;
-  border: none;
-  border-radius: 5px;
-  background: #02b3e4;
-  cursor: pointer;
-  color: #fff;
-  font-size: 17px;
-}
-
-/*
-add media queries 
-*/
-@media screen and (max-width: 701px) {
-  .score-panel {
-    max-width: 70%;
-    padding-bottom: 0;
-    display: block;
+.header .logo .logo-text {
+    width: 95px;
+    background: #e1e3e3;
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-weight: bold;
     text-align: center;
-    line-height: 1.7em;
-  }
-
-  .score-panel #timer-min {
-    margin-left: 5px;
-  }
+    padding-top: 75px;
+    color: #03B3E4;
 }
 
-@media screen and (min-width:501px) and (max-width: 700px) {
-  .deck {
-    max-width: 500px;
-    min-height: auto;
-    padding-bottom: 17px;
-  }
-
-  .deck .card {
-    height: 98px;
-    width: 98px;
-    margin-bottom: 17px;
-  }
+ .header .logo .logo-text .pig-ltr {
+    font-size: 28px  
 }
 
-@media screen and (max-width: 500px) {
-	
-  .deck .card.show {
-    font-size: 23px;
-  }
-
-  .deck .card.match {
-    font-size: 23px;
-  }
-
-  .deck {
-    max-width: 300px;
-    min-height: auto;
-    padding-bottom: 17px;
-  }
-
-  .deck .card {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 17px;
-  }
+.header .name-title {
+    width: 70%;
+    text-align: right;
+    padding: 40px 0 40px 0;
+    text-transform: uppercase;
 }
 
-@media screen and (max-width: 422px) {
-  #restart {
-    float: left;
-    margin-left: 29px;
-  }
-}
-/*
-site animations
-*/
-
-/* 
-make card flip when clicked
-*/
-
-@keyframes flipInY {
-  from {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-  }
-
-  to {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
+.header .name-title .name {
+    font-weight: 300;
+    font-size: 50px;
 }
 
-.deck .card.flipInY {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-  -webkit-animation-name: flipInY;
-  animation-name: flipInY;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
+.header .name-title .title {
+    font-weight: 600;
+    font-size: 20px; 
+}
+
+/* HERO */
+.hero {
+    padding-top: 30px;
+    margin-bottom: 40px;   
+}
+
+.hero .hero-img {
+    max-width: 100%;
+}
+
+/* PORTFOLIOI */
+.portfolio {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.portfolio .portfolio-head {
+    margin-bottom: 20px;
+    width: 100%;
+    color: #7D97AE;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.portfolio .portfolio-item {
+    height: 335px;
+    width: calc(33.3333% - 12px);
+    margin: 12px 0;
+    color: #2E3C49;
+}
+
+.portfolio .portfolio-item .portfolio-img {
+    width: 100%;
+    min-height: 205px;
+}
+
+.portfolio .portfolio-item .port-item-head {
+    margin: 10px 0;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.portfolio .portfolio-item .project-info {
+    text-align: center;
+    line-height: 24px;
+}
+
+.portfolio .portfolio-item .project-info .project-link {
+    text-decoration: none;
+    color: #7D97AE;
+}
+
+/* setting container size */
+@media screen and (min-width: 1100px) {
+    
+    .container {
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+/*quiris padding-- responsiveness--responsive fonts */
+/*Setting padding */
+@media screen and (max-width: 1120px) {
+    
+    .portfolio {
+        padding: 0 10px;
+    }
+    
+    .header {
+        padding: 0 10px;
+    }
+}
+
+/* Responsiveness settings */
+@media screen and (max-width: 870px) {
+    
+    .header .logo, .header .name-title {
+        width: 100%;
+        text-align: center;
+    }
+    .header .logo {
+    }
+    
+    .header .name-title {
+        padding: 0px 0 20px 0;
+    }
+
+    
+    .portfolio .portfolio-item {
+    width: calc(50% - 16px);
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    
+    .portfolio .portfolio-item {
+        width: calc(90% - 16px);
+        margin: 0 auto;
+    }
+    
+}
+
+/* Makes Font responsve*/
+@media screen and (min-width:450px) and (max-width: 600px)  {
+    
+    .header .name-title .name {
+        font-size: 40px;
+    }
+
+    .header .name-title .title {
+        font-size: 17px
+    }
+    
+    .portfolio .portfolio-head {
+    font-size: 30px;
+    }
+    
+    .portfolio .portfolio-item .port-item-head {
+        font-size: 30px;
+    }
+    
 }
 
 
-/* make element shake from 
-https://daneden.github.io/animate.css/*/
+@media screen and (max-width:449px) {
+    
+    .header .name-title .name {
+        font-size: 30px;
+    }
 
-.deck .card.shake {
-  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
+    .header .name-title .title {
+        font-size: 15px
+    }
+    
+    .portfolio .portfolio-head {
+    font-size: 25px;
+    }
+    
+    .portfolio .portfolio-item .port-item-head {
+        font-size: 30px;
+    }
 
-@keyframes shake {
-  from,
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
-}
-
-
-/*
-add animation when matched from https://daneden.github.io/animate.css/
-*/ 
-
-@keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.deck .card.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
 }
